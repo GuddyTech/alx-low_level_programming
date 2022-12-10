@@ -1,4 +1,17 @@
 #include <stdio.h>
+/**
+ 
+   * main - Entry point
+ 
+    * 
+ 
+ * Main: Prints sizws of characters
+ 
+     * 
+
+      * Return: Always 0 (Success)
+
+       */
 int main(void)
 
 {
