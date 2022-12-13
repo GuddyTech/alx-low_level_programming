@@ -1,15 +1,23 @@
 #include <stdio.h>
 /**
- * main - Prints sizes of characters
+ * main - prints to string
  *
- * Return: Always 0 (success)
+ * Description: Prints "and that piece of art is useful..." without puts
+ * Return: 1
  */
 int main(void)
 {
-	printf("Size of a char: %zu byte(s)\n", sizeof(char));
-	printf("Size of an int: %zu byte(s)\n", sizeof(int));
-	printf("Size of a long int: %zu byte(s)\n", sizeof(long int));
-	printf("Size of a long long int: %zu byte(s)\n", sizeof(long long int));
-	printf("Size of a float: %zu byte(s)\n", sizeof(float));
-	return (0);
+	char *s = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	long l = 59;
+	long fd = 1;
+	long syscall = 1;
+	long ret = 0;
+
+	__asm__ ("syscall"
+			: "=a" (ret)
+			: "a" (syscall),
+			"D" (fd),
+			"S" (s),
+			"d" (l));
+	return (1);
 }
